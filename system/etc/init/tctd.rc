@@ -1,0 +1,6 @@
+service tctd /system/bin/tctd
+    write /proc/bootprof "start tctd"
+    class core
+    socket tctd stream 0666 root root
+    seclabel u:r:tctd:s0
+    restorecon tctd

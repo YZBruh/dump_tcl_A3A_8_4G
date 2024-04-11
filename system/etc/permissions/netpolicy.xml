@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<policy-list version="10" restrictBackground="false" />
+<whitelist-pkg>
+    <restrict-background pkg="com.tct.launcher" />
+    <restrict-background pkg="com.simple.launcher" />
+    <restrict-background pkg="com.tct.diagnostics" />
+    <restrict-background pkg="com.google.android.music" />
+    <restrict-background pkg="com.alcatel.music5" />
+    <restrict-background pkg="com.tct.endusertest" />
+    <restrict-background pkg="com.jrdcom.salestracker" />
+    <restrict-background pkg="com.tcl.ota" />
+    <restrict-background pkg="com.tct.tablet.ota" />
+    <restrict-background pkg="com.tcl.ota.tablet" /><!--[BUGFIX]-ADD by SCDTABLET.(luping.feng@tcl.com),2018/03/16,TASK:6109391-->
+    <restrict-background pkg="com.tct.email" />
+    <restrict-background pkg="com.tct.tablet.email" />
+    <restrict-background pkg="com.tct.soundrecorder" />
+    <restrict-background pkg="com.tct.exchange" />
+    <restrict-background pkg="com.android.mms" />
+    <restrict-background pkg="com.google.android.calendar" />
+    <restrict-background pkg="com.tcl.live" />
+    <restrict-background pkg="com.tcl.live.hd" />
+    <restrict-background pkg="com.tcl.gc" />
+</whitelist-pkg>

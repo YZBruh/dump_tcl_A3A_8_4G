@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Date:12/2017
+                                PRESENTATION
+
+       Copyright 2017 TCL Communication Technology Holdings Limited.
+
+ This material is company confidential, cannot be reproduced in any form
+ without the written permission of TCL Communication Technology Holdings
+ Limited.
+
+  Author :  chunhua.chen
+  Email  :  chunhua.chen@tcl.com
+  Role   :
+  Reference documents :
+  Comments :
+  File     :
+  Labels   :
+     Modifications on Features list / Changes Request / Problems Report
+ **************************************************************************
+    date   |        author        |         Key          |     comment
+ **********|**********************|**********************|*****************
+ * 07/12/17|     chunhua.chen     |     task 5758567     | alarm policy
+ **********|**********************|**********************|*****************
+ -->
+
+<!-- These are configurations that must exist on all Android devices. -->
+<!-- policyflags bit define in frameworks/base/core/java/android/app/AlarmManager.java
+    public static final int FLAG_POLICY_DROP_FLAGS = 1<<5; //0x20
+    public static final int FLAG_POLICY_DROP_WAKEUP = 1<<6;//0x40
+    public static final int FLAG_POLICY_HEURISTIC = 1<<7;//0x80
+    public static final int FLAG_POLICY_HEURISTIC_AGGRESSIVE = 1<<8 | FLAG_POLICY_HEURISTIC; //0x180
+    public static final int FLAG_POLICY_STANDALONE = 1<<9;//0x200
+    public static final int FLAG_POLICY_DENY       = 1<<10;//0x400
+-->
+<config>
+
+    <!-- Broadcast actions that are currently exempted from O+ background
+         delivery restrictions. -->
+    <!-- drop all wakeup -->
+    <alarm-policy-flagslisted-apps policyflags="0x40" />
+
+    <alarm-policy-flagslisted-apps tag="com.tcl.mibc.library.log_active" policyflags="0x400"/>
+    <alarm-policy-flagslisted-apps package="com.tct.endusertest" policyflags="0x40" />
+    <alarm-policy-flagslisted-apps package="com.jrdcom.salestracker" policyflags="0x40" />
+    <alarm-policy-flagslisted-apps package="com.tct.weather" policyflags="0x40" />
+    <alarm-policy-flagslisted-apps package="com.knowroaming.oem.universal.alckr" policyflags="0x40" />
+    <alarm-policy-flagslisted-apps package="com.tencent.mobileqq" policyflags="0x40" />
+    <alarm-policy-flagslisted-apps package="com.tencent.mm" policyflags="0x40" />
+
+    <alarm-policy-flagslisted-apps package="com.google.android.gms" policyflags="0x40" />
+    <alarm-policy-maskslisted-apps tag="com.android.server.cts.device.batterystats.ALARM" policymasks="0x7FFFFFFF"/>
+    <alarm-policy-maskslisted-apps package="com.google.android.gms" tag="com.google.android.gms.gcm.HEARTBEAT_ALARM" policymasks="0x7FFFFFFF" />
+    <alarm-policy-maskslisted-apps package="com.google.android.gms" tag="com.google.android.intent.action.GCM_RECONNECT" policymasks="0x7FFFFFFF" />
+
+    <alarm-policy-maskslisted-apps package="com.android.deskclock" policymasks="0x7FFFFFFF" />
+    <alarm-policy-maskslisted-apps package="com.google.android.calendar" policymasks="0x7FFFFFFF" />
+    <alarm-policy-maskslisted-apps package="com.android.providers.media" policymasks="0x7FFFFFFF" />
+    <alarm-policy-maskslisted-apps package="com.android.providers.calendar" policymasks="0x7FFFFFFF" />
+    <!-- should in last for deny the system_server -->
+    <alarm-policy-maskslisted-apps package="android" policymasks="0x7FFFFFFF" />
+</config>

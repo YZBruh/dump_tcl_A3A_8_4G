@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+<!--system--> 
+<device-idle-blacklist pkg="com.jrdcom.Elabel"/>
+<device-idle-blacklist pkg="com.tct.endusertest"/>
+<!--Unclassified--> 
+<device-idle-blacklist pkg="com.tencent.news"/>
+<device-idle-blacklist pkg="com.tuniu.app.ui"/>
+<device-idle-blacklist pkg="com.tencent.reading"/>
+<device-idle-blacklist pkg="com.netease.newsreader.activity"/>
+<device-idle-blacklist pkg="com.qihoo360.mobilesafe"/>
+<device-idle-blacklist pkg="com.doudizhu.mainhuanle"/>
+<device-idle-blacklist pkg="com.tuyoo.doudizhu.main"/>
+<device-idle-blacklist pkg="com.UCMobile"/>
+<device-idle-blacklist pkg="com.linecorp.b612.android"/>
+<!-- <device-idle-blacklist pkg="com.baidu.BaiduMap"/>
+<device-idle-blacklist pkg="com.sdu.didi.psnger"/>
+<device-idle-blacklist pkg="com.codoon.gps"/> -->
+<!--tools--> 
+<device-idle-blacklist pkg="io.github.skyhacker2.magnetsearch" />
+<device-idle-blacklist pkg="com.jrzheng.supervpnfree" />
+<device-idle-blacklist pkg="com.netease.uu" />
+<device-idle-blacklist pkg="rounded.corners.roundedcorners.roundedcorners8" />
+<device-idle-blacklist pkg="com.halo.wifikey.wifilocating" />
+<device-idle-blacklist pkg="com.cleanmaster.mguard" />
+<device-idle-blacklist pkg="cn.jiguang.gp" />
+<device-idle-blacklist pkg="com.oasisfeng.greenify" />
+<device-idle-blacklist pkg="com.baidu.searchbox" />
+<device-idle-blacklist pkg="com.google.android.launcher" />
+<device-idle-blacklist pkg="com.weberdo.apps.serviceinfo" />
+<device-idle-blacklist pkg="mark.via.gp" />
+<device-idle-blacklist pkg="com.forfan.bigbang" />
+<device-idle-blacklist pkg="org.wikipedia" />
+<device-idle-blacklist pkg="org.itxtech.daedalus" />
+<device-idle-blacklist pkg="com.lerist.ghosts" />
+<device-idle-blacklist pkg="com.shoplex.plex" />
+<device-idle-blacklist pkg="com.lionmobi.powerclean" />
+<device-idle-blacklist pkg="com.lenovo.anyshare.gps" />
+<!-- <device-idle-blacklist pkg="com.google.android.inputmethod.latin" / -->
+<!-- <device-idle-blacklist pkg=" com.sohu.inputmethod.sogou  " />
+<device-idle-blacklist pkg=" com.sohu.inputmethod.sogou  " />
+<device-idle-blacklist pkg=" green.vpn.green_201705291557.green  " /> -->
+<!-- <device-idle-blacklist pkg=" com.iflytek.inputmethod.google  " /> -->
+<!--games-->
+<device-idle-blacklist pkg="com.google.android.play.games" />
+<device-idle-blacklist pkg="com.onetongames.kingofthehill" />
+<device-idle-blacklist pkg="com.blackpanther.ninjaarashi" />
+<device-idle-blacklist pkg="com.opalastudios.pads" />
+<device-idle-blacklist pkg="com.opalastudios.pads" />
+<device-idle-blacklist pkg="com.empire.grow.rome" />
+<device-idle-blacklist pkg="com.m2c.studio.transparent.screen" />
+<device-idle-blacklist pkg="com.valvesoftware.android.steam.community" />
+<device-idle-blacklist pkg="tv.twitch.android.app" />
+<!--communications-->
+<device-idle-blacklist pkg="com.instagram.android" />
+<device-idle-blacklist pkg="com.tumblr" />
+<!-- <device-idle-blacklist pkg="com.whatsapp" /> -->
+<!-- <device-idle-blacklist pkg="com.tencent.mobileqq" /> -->
+<!-- <device-idle-blacklist pkg="com.google.android.gm" /> -->
+<device-idle-blacklist pkg="com.weico.international" />
+<device-idle-blacklist pkg="com.pinterest" />
+<device-idle-blacklist pkg="com.zhihu.android" />
+<device-idle-blacklist pkg="com.sina.weibo" />
+<device-idle-blacklist pkg="com.google.android.apps.plus" />
+<device-idle-blacklist pkg="com.facebook.Mentions" />
+<device-idle-blacklist pkg="com.quora.android" />
+<device-idle-blacklist pkg="com.github.shadowsocks" />
+<device-idle-blacklist pkg="org.telegram.messenger" />
+<!-- video and audio-->
+<device-idle-blacklist pkg="com.google.android.youtube" />
+<device-idle-blacklist pkg="com.mxtech.videoplayer.ad" />
+<device-idle-blacklist pkg="com.qiyi.video" />
+<device-idle-blacklist pkg="com.duapps.recorder" />
+<device-idle-blacklist pkg="tv.danmaku.bili" />
+<device-idle-blacklist pkg="com.tencent.qqmusic" />
+<device-idle-blacklist pkg="fm.xiami.main" />
+<!--photography-->
+<!-- <device-idle-blacklist pkg="com.google.android.apps.photos" /> -->
+<device-idle-blacklist pkg="com.adobe.psmobile" />
+<device-idle-blacklist pkg="com.niksoftware.snapseed" />
+<device-idle-blacklist pkg="com.magicunicorn.makeapp" />
+<device-idle-blacklist pkg="com.campmobile.snow" />
+<!--Life leisure-->
+<device-idle-blacklist pkg="com.sankuai.meituan" />
+<device-idle-blacklist pkg="com.taobao.taobao" />
+<device-idle-blacklist pkg="com.taobao.idlefish" />
+<!--Navigation application-->
+<!-- <device-idle-blacklist pkg="com.google.android.apps.maps" /> -->
+<device-idle-blacklist pkg="com.autonavi.minimap" />
+<device-idle-blacklist pkg="com.baidu.BaiduMap" />
+<device-idle-blacklist pkg="com.mobike.mobikeapp" />
+<device-idle-blacklist pkg="com.ubercab" />
+<device-idle-blacklist pkg="ctrip.english" />
+<device-idle-blacklist pkg="com.kmb.app1933" />
+<!--news-->
+<device-idle-blacklist pkg="com.twitter.android" />
+<device-idle-blacklist pkg="bbc.mobile.news.ww" />
+<device-idle-blacklist pkg="com.allfootball.news" />
+<!--browser-->
+<device-idle-blacklist pkg="com.android.chrome" />
+<device-idle-blacklist pkg="com.UCMobile.intl" />
+<device-idle-blacklist pkg="org.mozilla.firefox" />
+<!--wallpapers-->
+<device-idle-blacklist pkg="com.wallpaperscraft.wallpaper" />
+<device-idle-blacklist pkg="com.ksmobile.launcher" />
+<device-idle-blacklist pkg="me.craftsapp.nlauncher" />
+<device-idle-blacklist pkg="com.teslacoilsw.launcher" />
+<device-idle-blacklist pkg="com.aneeshpradeep.amoledwallpapers" />
+<!--education-->
+<device-idle-blacklist pkg="com.ted.android" />
+<device-idle-blacklist pkg="com.stackexchange.stackoverflow" />
+<device-idle-blacklist pkg="com.curiosity.dailycuriosity" />
+<!--office-->
+<device-idle-blacklist pkg="com.microsoft.office.outlook" />
+<!-- <device-idle-blacklist pkg="com.google.android.calendar" /> -->
+<device-idle-blacklist pkg="ren.growth" />
+<!--health and fitnes-->
+<device-idle-blacklist pkg="com.psyone.brainmusic" />
+
+</permissions>

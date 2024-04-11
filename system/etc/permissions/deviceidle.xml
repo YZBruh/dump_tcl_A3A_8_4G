@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<config>
+<wl n="com.google.android.music" />
+<wl n="com.alcatel.music5" />
+<wl n="com.jrdcom.salestracker" />
+<wl n="com.tct.email" />
+<wl n="com.tct.tablet.email" />
+<wl n="com.tct.fmradio" />
+<wl n="com.tct.tablet.fmradio" />
+<wl n="com.tct.gallery3d" />
+<wl n="com.tct.tablet.gallery3d" />
+<wl n="com.tct.soundrecorder" />
+<wl n="com.tct.exchange" />
+<wl n="com.android.mms" />
+<wl n="com.google.android.calendar" />
+<wl n="com.tcl.live" />
+<wl n="com.tcl.live.hd" />
+<wl n="com.tcl.gc" />
+</config>

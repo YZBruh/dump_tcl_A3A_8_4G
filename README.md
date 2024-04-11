@@ -1,0 +1,20 @@
+## 9027F-user 8.1.0 O11019 vB7B-0 release-keys
+- Manufacturer: tcl
+- Platform: mt6739
+- Codename: A3A_8_4G
+- Brand: TCL
+- Flavor: 9027X-user
+- Release Version: 8.1.0
+- Kernel Version: 4.4.95
+- Id: O11019
+- Incremental: vB7B-0
+- Tags: release-keys
+- CPU Abilist: armeabi-v7a,armeabi
+- A/B Device: false
+- Treble Device: true
+- Locale: undefined
+- Screen Density: 240
+- Fingerprint: TCL/9027F/A3A_8_4G:8.1.0/O11019/vB7B-0:user/release-keys
+- OTA version: 
+- Branch: 9027F-user-8.1.0-O11019-vB7B-0-release-keys
+- Repo: tcl_a3a_8_4g_dump

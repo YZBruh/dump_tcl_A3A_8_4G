@@ -1,0 +1,5 @@
+//Task5354494 added by chuanbo qiu for adding file lock
+service filelock /system/bin/filelock
+    class core
+    user root
+    #seclabel u:r:filelock:s0

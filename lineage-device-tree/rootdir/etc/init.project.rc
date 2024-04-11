@@ -1,0 +1,203 @@
+# MTK project .rc configure
+
+import init.mt6739.usb.rc
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+#begin- added by yaosen.lin for minilog ,T5424663,20171208
+on post-fs
+    chown system system /tctpersist
+    chmod 0775 /tctpersist
+    restorecon /tctpersist
+#End- added by yaosen.lin for minilog ,T5424663,20171208
+
+on post-fs-data
+   #begin- added by yaosen.lin for minilog ,T5424663,20171208
+    mkdir /tctpersist/minilog 0775 root system
+    #End- added by yaosen.lin for minilog ,T5424663,20171208
+
+#Begin add by chenli.gao.hz for XR5779289 tclpugin on 20180125
+   mkdir /tctpersist/phone 1777 system system
+   chmod 0666 /tctpersist/phone/calltimesaver
+#End add by chenli.gao.hz for XR5779289 tclpugin on 20180125
+
+#modify by lida for taks:5443772 to enble tee at 2017.11.22 begin
+#    mkdir /data/misc/mcRegistry 0775 system system
+#    mkdir /data/misc/mcRegistry/TbStorage 0775 system system
+#    mkdir /persist/backup 0775 system system
+#    symlink  /persist/backup/00000000.authtokcont /data/misc/mcRegistry/00000000.authtokcont.backup
+#modify by lida for taks:5443772 to enble tee at 2017.11.22 end
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+#Begin added by zhanyong.yin for XR5424731 on 2017/10/19
+    chmod 0660 /dev/DW9800AF
+    chown system camera /dev/DW9800AF
+#End added by zhanyong.yin for XR5424731 on 2017/10/19
+#Begin added by zhanyong.yin for XR5581518 on 2017/11/16
+    chmod 0660 /dev/DW9800SAF
+    chown system camera /dev/DW9800SAF
+#End added by zhanyong.yin for XR5581518 on 2017/11/16
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+    #Begin add by yang.sun for XR5505624 on 20171121
+    	chmod 666 /tctpersist/persist_sys_switch
+    	chmod 666 /tctpersist/persist_sys_mute
+    #End add by yang.sun for XR5505624 on 20171121
+
+    #Added for task-5868786 by yonglin.liao 2018/01/23 begin
+    chmod 666 /tctpersist/persist_ssv_mccmnc
+    #Added for task-5868786 by yonglin.liao 2018/01/23 end
+
+#BEGIN Added by binjian.tu for NFC on 2017/09/12
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    chmod 0660 /dev/pn544
+    chown nfc nfc /dev/pn544
+#END Added by binjian.tu for NFC on 2017/09/12
+
+# Begin-20171107-jrdhz-linyaosen-add-for t5424668 to display software version
+	start getver
+# End-20171107-jrdhz-linyaosen-add-for t5424668 to display software version
+
+#Begin modified by yadong.yang for XR5424620 on 20171127
+    start tctd
+#End modified by yadong.yang for XR5424620 on 20171127
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    class core
+    oneshot
+
+on property:dev.bootcomplete=1
+    write /sys/power/pm_print_times 0
+   
+# BEGIN-modified by wenhui.xu 20171219 for adding enable adb function in recovery mode on Task:5424685.
+service enable_adb /system/bin/enable_adb
+    class late_start
+    user root
+    group root
+    oneshot
+# END---modified by wenhui.xu 20171219 for adding enable adb function in recovery mode on Task:5424685.
+    
+# Begin-20171107-jrdhz-linyaosen-add-for t5424668 to display software version
+service getver  /system/bin/getver
+       user root
+       group root system
+       oneshot
+# End-20171107-jrdhz-linyaosen-add-for t5424668 to display software version
+
+#begin- added by yaosen.lin for minilog ,T5424663,20171208
+on early-boot
+    start powerup_reason
+on boot
+    chmod 0775 /tctpersist/minilog/powerup_reason
+#Begin added by qian.xue for XR5899200 on 2017/01/19
+#    chmod 0666 /dev/sunwave_fp
+#    chown system system /dev/sunwave_fp
+#End added by qian.xue for XR5899200 on 2017/01/19
+service powerup_reason /system/bin/powerup_reason
+    user root
+    group root
+    disabled
+    oneshot      
+#End- added by yaosen.lin for minilog ,T5424663,20171208
+#Task5424628 add by xuanfeng.ye for set cu ref system property begin
+service gettraceability /vendor/bin/gettraceability
+    user root
+    group root
+    oneshot
+
+on property:dev.bootcomplete=1
+    start gettraceability
+#Task5424628 add by xuanfeng.ye for set cu ref system property end
+
+#Begin modified by yadong.yang for XR5424620 on 20171127
+service tctd /system/bin/tctd
+    write /proc/bootprof "start tctd"
+    class core
+    socket tctd stream 0666 root root
+    group system
+    seclabel u:r:tctd:s0
+    restorecon tctd
+#End modified by yadong.yang for XR5424620 on 20171127
+
+#Task5424687 added by jia.zhang for root check begin
+#service forcc /sbin/forcc --root_seclabel=u:r:forcc:s0
+service forcc /sbin/forcc
+    user root
+    group root
+    oneshot
+    seclabel u:r:forcc:s0
+
+on property:dev.bootcomplete=1
+    start forcc
+#Task5424687 added by jia.zhang for root check end
+
+
+# Begin. Added by jinming.xiang for 5758145
+#service get_dev_info /vendor/bin/get_dev_info
+#    user root
+#    group root
+#    oneshot
+
+#on property:dev.bootcomplete=1
+#    start get_dev_info
+
+# End. Added by jinming.xiang for 5758145
+
+# Begin added by yinghe for XR5756752 on 2017/12/21
+service logcat2uart /system/bin/logcat  -b system -b main -b events -b crash -v printable -f /dev/kmsg -r 1024 -n 256 *:W
+    oneshot
+    disabled
+    user root
+    group log readproc root
+    writepid /dev/cpuset/system-background/tasks
+# End added by yinghe for XR5756752 on 2017/12/21
+
+# Added by tongkao.chen for Task: 6180362, 04/11/2018, begin
+on property:persist.sys.gesture_enable=1
+    write /proc/tct_debug/tp/gesture_enable  1
+
+on property:persist.sys.gesture_enable=0
+    write /proc/tct_debug/tp/gesture_enable 0
+# Added by tongkao.chen for Task: 6180362, 04/11/2018, end
